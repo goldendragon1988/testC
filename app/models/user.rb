@@ -8,4 +8,6 @@ class User < ApplicationRecord
     :omniauthable, omniauth_providers: %i[google_oauth2]
 
   validates :first_name, :last_name, presence: true
+
+  has_many :providers, dependent: :destroy
 end

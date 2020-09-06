@@ -18,24 +18,17 @@ module Oauthable
     end
 
   private
-    #def facebook
-      #if @@user.nil?
-        #@@user = User.new(email:        @@auth.info.email,
-                          #password:     Devise.friendly_token(8),
-                          #first_name:   @@auth.info.name.split[0..-2].join(" "),
-                          #last_name:    @@auth.info.name.split[-1])
-      #end
-    #end
 
     def google_oauth2
       if @@user.nil?
-        @@user = User.new(email:        @@auth.info.email,
-                          password:     Devise.friendly_token(8),
-                          first_name:   @@auth.info.first_name,
-                          last_name:    @@auth.info.last_name)
+        @@user = User.new(
+          email:        @@auth.info.email,
+          password:     Devise.friendly_token(8),
+          first_name:   @@auth.info.first_name,
+          last_name:    @@auth.info.last_name
+        )
       end
     end
-
 
     def find_provider
       Provider.where(name: @@auth.provider, uid: @@auth.uid).first
