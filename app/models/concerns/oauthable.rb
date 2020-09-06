@@ -31,6 +31,7 @@ module Oauthable
     end
 
     def find_provider
+      binding.pry
       Provider.where(name: @@auth.provider, uid: @@auth.uid).first
     end
 

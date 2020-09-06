@@ -43,6 +43,7 @@ group :test do
 	gem 'shoulda-matchers'
 	gem 'faker'
 	gem 'database_cleaner'
+  gem 'hash_dot'
 end
 
 group :development do
