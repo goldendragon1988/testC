@@ -8,5 +8,6 @@ RSpec.describe Provider, type: :model do
   # ensure columns title and created_by are present before saving
   it { should validate_presence_of(:uid) }
   it { should validate_presence_of(:name) }
+  subject { FactoryBot.create(:provider) }
   it { should validate_uniqueness_of(:uid) }
 end
