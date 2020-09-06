@@ -2,7 +2,6 @@
 
 class Users::SessionsController < Devise::SessionsController
   respond_to :json
-
   def show
     respond_with(current_user)
   end
